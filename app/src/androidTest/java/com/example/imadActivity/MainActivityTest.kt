@@ -1,4 +1,4 @@
-package com.example.imadclass
+package com.example.imadActivity
 
 import android.graphics.Color
 import android.widget.Button
@@ -37,7 +37,7 @@ class MainActivityTest {
             button.performClick()
 
             // Check if the TextView's text was updated
-            assertEquals("Hello, John! Button was clicked2!", textView.text)
+            assertEquals("Hello, John! Button was clicked!", textView.text)
             assertEquals(Color.RED, textView.currentTextColor)
         }
     }

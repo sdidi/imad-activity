@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "imadclass"
+rootProject.name = "imadActivity"
 include(":app")
  

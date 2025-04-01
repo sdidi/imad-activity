@@ -1,4 +1,4 @@
-package com.example.imadclass.ui.theme
+package com.example.imadActivity.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

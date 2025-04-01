@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.imadclass"
+    namespace = "com.example.imadActivity"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.imadclass"
+        applicationId = "com.example.imadActivity"
         minSdk = 30
         targetSdk = 35
         versionCode = 1

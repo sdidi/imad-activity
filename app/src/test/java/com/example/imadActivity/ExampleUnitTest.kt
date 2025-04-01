@@ -1,4 +1,4 @@
-package com.example.imadclass
+package com.example.imadActivity
 
 import org.junit.Test
 

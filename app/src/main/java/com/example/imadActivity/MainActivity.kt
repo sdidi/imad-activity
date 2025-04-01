@@ -1,11 +1,10 @@
-package com.example.imadclass
+package com.example.imadActivity
 
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.MotionEvent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView

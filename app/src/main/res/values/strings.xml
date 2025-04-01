@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">imadclass</string>
+    <string name="app_name">imadActivity</string>
     <string name="click_me_to_exit">Click Me to Exit</string>
     <string name="click_here">Click here</string>
     <string name="button_clicked">I have been clicked</string>
