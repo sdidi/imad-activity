@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">imadclass</string>
+    <string name="click_me_to_exit">Click Me to Exit</string>
+    <string name="click_here">Click here</string>
+    <string name="button_clicked">I have been clicked</string>
+    <string name="button_message">Button was clicked!</string>
+    <string name="enter_text_here">Enter text here</string>
+    <string name="name">Name</string>
+    <string name="button">Button</string>
+    <string name="enter_time">Enter Time</string>
+    <string name="time">Time</string>
+    <string name="morning_time">morning</string>
+    <string name="afternoon_time">afternoon</string>
+    <string name="mid_afternoon_time">mid afternoon</string>
+</resources>
