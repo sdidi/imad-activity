@@ -32,6 +32,9 @@ jobs:
           android-version: ${{ matrix.android-version }}
           cache: true
 
+      - name: Give execute permission to gradlew
+        run: chmod +x ./gradlew
+
       - name: Install dependencies
         run: |
           ./gradlew clean
