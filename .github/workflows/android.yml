@@ -26,7 +26,7 @@ jobs:
           java-version: 11
 
       - name: Set up Android SDK
-        uses: react-native-community/setup-android@v1
+        uses: android-actions/setup-android@v2
         with:
           android-version: ${{ matrix.android-version }}
           cache: true
