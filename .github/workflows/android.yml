@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 11
-          distribution: 'adoptium'
+          distribution: 'openjdk'
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
@@ -51,4 +51,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: app/build/test-results  # Path where test results are stored
+          path: app/build/test-results/testDebugUnitTest  # Path where test results are stored
+
+      - name: Upload instrumented test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instrumented-test-results
+          path: app/build/outputs/androidTest-results
+
