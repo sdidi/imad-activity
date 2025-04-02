@@ -1,0 +1,53 @@
+name: Android CI
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch (can be other branches)
+  pull_request:
+    branches:
+      - main  # Trigger on PR to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        android-version: [35]  # You can change the Android version here (e.g., 29, 30, etc.)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+
+      - name: Set up Android SDK
+        uses: react-native-community/setup-android@v1
+        with:
+          android-version: ${{ matrix.android-version }}
+          cache: true
+
+      - name: Install dependencies
+        run: |
+          ./gradlew clean
+          ./gradlew dependencies
+
+      - name: Build the project
+        run: ./gradlew assembleDebug  # Change to assembleRelease if needed
+
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest  # Adjust this to match the test task in your build.gradle
+
+      - name: Run Instrumented tests (Android tests)
+        run: ./gradlew connectedDebugAndroidTest  # Run your instrumented tests
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: app/build/test-results  # Path where test results are stored
