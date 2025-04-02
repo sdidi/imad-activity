@@ -3,10 +3,10 @@ name: Android CI
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch (can be other branches)
+      - main
   pull_request:
     branches:
-      - main  # Trigger on PR to the main branch
+      - main
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        android-version: [35]  # You can change the Android version here (e.g., 29, 30, etc.)
+        android-version: [35]
 
     steps:
       - name: Checkout code
@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 11
-          distribution: 'openjdk'
+          distribution: 'adoptopenjdk'
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
@@ -38,20 +38,20 @@ jobs:
           ./gradlew dependencies
 
       - name: Build the project
-        run: ./gradlew assembleDebug  # Change to assembleRelease if needed
+        run: ./gradlew assembleDebug
 
       - name: Run unit tests
-        run: ./gradlew testDebugUnitTest  # Adjust this to match the test task in your build.gradle
+        run: ./gradlew testDebugUnitTest
 
       - name: Run Instrumented tests (Android tests)
-        run: ./gradlew connectedDebugAndroidTest  # Run your instrumented tests
+        run: ./gradlew connectedDebugAndroidTest
 
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: app/build/test-results/testDebugUnitTest  # Path where test results are stored
+          path: app/build/test-results/testDebugUnitTest
 
       - name: Upload instrumented test results
         if: always()
