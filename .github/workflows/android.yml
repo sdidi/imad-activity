@@ -48,6 +48,21 @@ jobs:
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
 
+      - name: Install Emulator Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+
+      - name: Install Android Emulator
+        run: |
+          yes | sdkmanager "system-images;android-30;google_apis;x86_64"
+          sdkmanager --install "emulator" "platform-tools"
+
+      - name: Create AVD
+        run: |
+          echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "Nexus 5X" --force
+
+
       - name: Start emulator
         run: |
           echo "Starting Android emulator"
