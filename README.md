@@ -1,5 +1,7 @@
 # imad-activity
 
-This project just tests basic mobile app functionality with android studio.
+Clarified "basic mobile app functionality" to specify it's tested using Android Studio.
 
-We also tests the inclusion github actions for automating running of unit tests
+Refined the second sentence to explicitly mention GitHub Actions automation for running unit tests.
+
+Improved the final sentence to emphasize the purpose of testing CI with GitHub Actions.
