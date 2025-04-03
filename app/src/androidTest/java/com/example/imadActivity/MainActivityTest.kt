@@ -18,7 +18,6 @@ class MainActivityTest {
 
     @Before
     fun setup() {
-        // Launch the activity before each test
         activityScenario = ActivityScenario.launch(MainActivity::class.java)
     }
 
